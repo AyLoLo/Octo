@@ -6,8 +6,7 @@ with app.app_context():
     Traveler.query.delete()
 
     travelers = []
-
-    travelers.append(Traveler(name="Ophilia Clement"))
+    travelers.append(Traveler(name="Ophillia Clement"))
 
     db.session.add_all(travelers)
     db.session.commit()
