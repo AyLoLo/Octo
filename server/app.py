@@ -29,3 +29,5 @@ class Travelers(Resource):
         for traveler in travelers :
             response_body.append(traveler.to_dict())
         return make_response(jsonify(response_body), 200)
+    
+api.add_resource(Travelers, "/travelers")
