@@ -8,7 +8,7 @@ metadata = MetaData(naming_convention={
 
 db = SQLAlchemy(metadata=metadata)
 
-class Travler(db.Model, SerializerMixin):
+class Traveler(db.Model, SerializerMixin):
     __tablename__ = "travelers"
 
 # Fields 
