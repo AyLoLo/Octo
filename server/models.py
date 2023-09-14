@@ -16,12 +16,12 @@ class Traveler(db.Model, SerializerMixin):
     # Fields
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(25), unique=True, nullable=False)
-    last_name = db.Column(db.String(25))
-    image = db.Column(db.String, nullable=False)
+    last_name = db.Column(db.String(25), nullable=True)
+    sprite_image = db.Column(db.String, nullable=False)
     job = db.Column(db.String, nullable=False)
     game_origin = db.Column(db.String, nullable=False)
     quote = db.Column(db.String, nullable=False)
-    biography = db.Column(db.String, nullable=False)
+    bio = db.Column(db.String, nullable=False)
 
     # Validations
     @validates("first_name")
@@ -32,7 +32,7 @@ class Traveler(db.Model, SerializerMixin):
     
     @validates("last_name")
     def validate_last_name(self, key, value):
-        if not (value[0].isupper()):
+        if not (value[0].isupper):
             raise ValueError("Last name must begin with a capital letter")
         return value
 
