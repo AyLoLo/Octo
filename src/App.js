@@ -1,4 +1,6 @@
-import './index';
+import './index.css';
+import { Route, Routes, useNavigate} from "react-router-dom";
+
 import Home from './Home';
 import Header from './Header';
 
@@ -8,8 +10,10 @@ function App() {
       <div>
         <Header/>
       </div>
-      <div> 
-        <Home/>
+      <div>
+        <Routes> 
+          <Route path="/" element={<Home/>}/>
+        </Routes>
       </div> 
     </div>
   );

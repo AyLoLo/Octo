@@ -1,10 +1,11 @@
 import React from "react";
+import Sprite from "./assets/Sprite.png";
+
 
 function Header(){
 
     return(
-        <header className="grid-cols-2">
-            <h1></h1>
+        <header className="p-2">
             <nav className="text-white flex justify-evenly">
                 <a href="/"> Home </a>
                 <a href=""> Octopath Traveler</a>
