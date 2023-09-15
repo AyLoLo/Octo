@@ -1,10 +1,11 @@
 import './index.css';
 import { useState, useEffect} from "react";
-import { Route, Routes, useNavigate} from "react-router-dom";
+import { Link, Route, Routes, useNavigate} from "react-router-dom";
 
 import Home from './Home';
 import Header from './Header';
 import OctoOne from './OctoOne';
+import Traveler from './Traveler';
 
 
 function App() {
@@ -13,11 +14,17 @@ function App() {
   
   const [travelers, setTravelers] = useState([])
 
+  const [focusTraveler, setFocusTraveler] = useState('')
+
   useEffect(() => {
     fetch('http://127.0.0.1:7000/travelers')
     .then(response => response.json())
     .then(travelerData =>setTravelers(travelerData))
   }, [])
+
+  const traveler = travelers.map(traveler => {
+    return traveler 
+  })
 
   return (
     <div className='h-full w-full'>
@@ -25,9 +32,10 @@ function App() {
         <Header/>
       </div>
       <div>
-        <Routes> 
+        <Routes>
+          {travelers.map(traveler => (<Link to={'travelers/'+ traveler.id}/>))}
           <Route path="/" element={<Home/>}/>
-          <Route path="/OctopathTraveler" element={<OctoOne travelers={travelers}/>}/>
+          <Route path="/Octopath_Traveler" element={<OctoOne travelers={travelers}/>}/>
         </Routes>
       </div> 
     </div>
