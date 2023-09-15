@@ -6,6 +6,7 @@ import Home from './Home';
 import Header from './Header';
 import OctoOne from './OctoOne';
 import Traveler from './Traveler';
+import TravelerDetails from './TravelerDetails';
 
 
 function App() {
@@ -26,6 +27,11 @@ function App() {
     return traveler 
   })
 
+  function InquireTraveler(event){
+    setFocusTraveler(event.target.id)
+    navigate("/Octopath_Traveler/:yoshi")
+  }
+
   return (
     <div className='h-full w-full'>
       <div>
@@ -33,9 +39,9 @@ function App() {
       </div>
       <div>
         <Routes>
-          {travelers.map(traveler => (<Link to={'travelers/'+ traveler.id}/>))}
           <Route path="/" element={<Home/>}/>
-          <Route path="/Octopath_Traveler" element={<OctoOne travelers={travelers}/>}/>
+          <Route path="/Octopath_Traveler" element={<OctoOne travelers={travelers} InquireTraveler={InquireTraveler}/>}/>
+          <Route path="/Octopath_Traveler/:yoshi" element={<TravelerDetails/>}/>
         </Routes>
       </div> 
     </div>

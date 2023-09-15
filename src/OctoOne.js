@@ -1,7 +1,7 @@
 import React from "react";
 import Traveler from "./Traveler";
 
-function OctoOne({travelers}){
+function OctoOne({travelers, InquireTraveler}){
 
     const oneTravelers = travelers.filter((traveler) => {
         if(traveler.game_origin === "Octopath Traveler"){
@@ -12,7 +12,7 @@ function OctoOne({travelers}){
     })
     
     const oneTraveler = oneTravelers.map(traveler => {
-        return <Traveler traveler={traveler} key={traveler.id}/>
+        return <Traveler traveler={traveler} key={traveler.id} InquireTraveler={InquireTraveler}/>
     })
 
     return (

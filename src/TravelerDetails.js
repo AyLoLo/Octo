@@ -1,10 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 function TravelerDetails(){
-    
-    return(
+
+    const { yoshi } = useParams()
+
+    return (
         <div>
-            This is where the details go
+            <h1>The Sacred Flame Awakens ... - {yoshi} </h1>
         </div>
     )
 }
