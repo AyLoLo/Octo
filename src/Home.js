@@ -15,9 +15,9 @@ function Home(){
                 <span className="text-black text-2xl italic font-semibold">The Sacred Flame Awakens...</span>
             </div>
             <div className="grid grid-cols-3 row-span-3">
-                <div className="flex justify-center p-10">
+                <a href="/OctopathTraveler" className="flex justify-center m-20">
                     <img className="w-96"src={Logo1} alt="Octopath Traveler"/>
-                </div>
+                </a>
                 <div className="flex justify-center p-10">
                     <img className="w-96" src={Logo2} alt="Octopath Traveler II"/>
                 </div>

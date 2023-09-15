@@ -3,6 +3,7 @@ import { Route, Routes, useNavigate} from "react-router-dom";
 
 import Home from './Home';
 import Header from './Header';
+import OctoOne from './OctoOne';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div>
         <Routes> 
           <Route path="/" element={<Home/>}/>
+          <Route path="/OctopathTraveler" element={<OctoOne/>}/>
         </Routes>
       </div> 
     </div>
