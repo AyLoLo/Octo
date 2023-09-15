@@ -1,6 +1,8 @@
 import React from "react";
 
-function OctoOne(){
+function OctoOne(travelers){
+
+    
 
     return (
         <div className="text-white">
