@@ -31,3 +31,6 @@ class Travelers(Resource):
         return make_response(jsonify(response_body), 200)
     
 api.add_resource(Travelers, "/travelers")
+
+if __name__ == '__main__':
+    app.run(port=7000, debug=True)
